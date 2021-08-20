@@ -14,24 +14,38 @@
       font-family: 'Red Hat Display', sans-serif;
       background-image: url('images/pattern-background-desktop.svg');
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
+      background-position: fixed;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+    .main{
+      transform: scale(.9);
+      transform: translate(0,10%);
+    }
+    .banner{
+      background-image: url("images/illustration-hero.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: fixed;
+      border-radius: 20px 20px 0 0;
+      height: 30vh;
+      width: 100%;
+    }
     .container{
       background: white;
-      /* transform: translate(70%,20%); */
       font-family: 'Red Hat Display', sans-serif;
-      width: 30%;
+      width: 25em;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
       padding: .8em;
-      height: 24em;
+      height: 25em;
       border-radius: 0 0 20px 20px;
-      box-shadow: 0px 8px 10px hsl(224, 23%, 55%);
+      box-shadow: 0px 5px 10px 0px hsl(224, 23%, 55%);
     }
     .title{
       color: hsl(223, 47%, 23%);
@@ -41,7 +55,7 @@
       color: hsl(224, 23%, 55%);
       font-weight: 500;
       text-align: center;
-      padding: .2em;
+      padding: 1em;
     }
     .plan{
       display: flex;
@@ -52,7 +66,6 @@
       border-radius: 10px;
       background:   hsl(225, 100%, 98%);
     }
-    
     .price{
       display: flex;
       flex-direction: column;
@@ -88,27 +101,39 @@
       padding: 1em;
       font-weight: 700;
       font-family:'Red Hat Display', sans-serif;  
-
     }
     .cancel:hover{
       color: hsl(223, 47%, 23%);
     }
     .attribution { 
+      margin: 2em;
       font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
     a{
       text-decoration: none;
+      color: hsl(245, 100%, 63%);
     }
     a:hover{
       text-decoration: underline;
     } 
+    @media screen and (max-width:1000px){
+      body{
+        background-image: url("images/pattern-background-mobile.svg");
+        background-position: top;
+      }
+      .main{
+        transform: scale(.7);
+      }
+    }
   </style>
 </head>
 <body>
-<div class="container">
+<div class="main">
+
+  <div class="banner"></div>
+  <div class="container">
     <h2 class="title">Order Summary</h2>
     <p class="para">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
-  <div class="plan">
+    <div class="plan">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#DFE6FB"/><path fill="#717FA6" fill-rule="nonzero" d="M32.574 15.198a.81.81 0 00-.646-.19L20.581 16.63a.81.81 0 00-.696.803V26.934a3.232 3.232 0 00-1.632-.44A3.257 3.257 0 0015 29.747 3.257 3.257 0 0018.253 33a3.257 3.257 0 003.253-3.253v-8.37l9.726-1.39v5.327a3.232 3.232 0 00-1.631-.441 3.257 3.257 0 00-3.254 3.253 3.257 3.257 0 003.254 3.253 3.257 3.257 0 003.253-3.253V15.81a.81.81 0 00-.28-.613z"/></g></svg>
     <div class="price">
 
@@ -117,13 +142,14 @@
     </div>
     <a href="#">Change</a>
   </div>
-    <button class="proceed">Proceed to Payment</button>
+  <button class="proceed">Proceed to Payment</button>
     <button class="cancel">Cancel Order</button>
-</div>  
-
-<!-- <div class="attribution">
+  </div>   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Anuj Sonsurkar</a>.
-  </div> -->
+  </div>
+</div>
+
+ 
 </body>
 </html>
